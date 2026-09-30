@@ -8,24 +8,6 @@ import { getAllDinosaurs } from "@/data/dinosaurs";
 const featured = ["t-rex", "triceratops", "brachiosaurus"]
   .map((id) => getAllDinosaurs().find((d) => d.id === id)!);
 
-const funFacts = [
-  {
-    title: "Las aves son dinosaurios",
-    text:
-      "Los pájaros que ves hoy son descendientes directos de pequeños dinosaurios con plumas que sobrevivieron a la extinción.",
-  },
-  {
-    title: "El corazón más grande",
-    text:
-      "El corazón de un Brachiosaurus podía pesar 200 kg para bombear sangre hasta su cabeza, a 9 metros de altura.",
-  },
-  {
-    title: "Sonidos de trombón",
-    text:
-      "El Parasaurolophus usaba la cresta de su cabeza como instrumento para comunicarse con su manada.",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -116,20 +98,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14">
-        <SectionTitle title="¿Sabías que...?" subtitle="Curiosidades prehistóricas" />
-        <div className="grid gap-6 md:grid-cols-3">
-          {funFacts.map((fact) => (
-            <div
-              key={fact.title}
-              className="rounded-2xl bg-white p-6 shadow-md border border-arena-200"
-            >
-              <p className="text-4xl">💡</p>
-              <h3 className="mt-3 font-bold text-selva-900">{fact.title}</h3>
-              <p className="mt-2 text-sm text-tierra-700">{fact.text}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 rounded-2xl bg-selva-800 text-crema-50 p-8 text-center">
+        <div className="rounded-2xl bg-selva-800 text-crema-50 p-8 text-center">
           <h3 className="text-2xl font-bold">¿Cuánto aprendiste hoy?</h3>
           <p className="mt-2 text-crema-100/80">
             Pon a prueba tus conocimientos en el quiz del Explorador.
